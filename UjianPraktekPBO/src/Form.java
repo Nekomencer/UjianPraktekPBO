@@ -379,12 +379,12 @@ public class Form extends javax.swing.JFrame {
         String jenis_kelamin = Jenis_Kelamin.getText();
         String tanggal_lahir = Tanggal.getText();
         String alamat = Alamat.getText();
-        try {
+        try{
             con = con();
-            String str = String.format("INSERT INTO tbl_data (Nama, Jurusan, Email, Password, Jenis_Kelamin, Tanggal, Alamat) VALUES('%s', '%s', '%s', '%s', '%s', '%s', '%s')",  nama, jurusan, email, password, jenis_kelamin, tanggal_lahir, alamat);
-            PreparedStatement pst = con.prepareStatement(str);
-            pst.executeQuery();
-        } catch (SQLException | ClassNotFoundException ex) {
+            PreparedStatement pst = con.prepareStatement(String.format("INSERT INTO tbl_data (Nama, Jurusan, Email, Password, JenisKelamin, TanggalLahir, Alamat) VALUES('%s', '%s', '%s', '%s', '%s', '%s', '%s')", nama, jurusan, email, password, jenis_kelamin, tanggal_lahir, alamat));
+            ResultSet rst = pst.executeQuery();
+        } catch (ClassNotFoundException ex) {
+        } catch (SQLException ex) {
         }
     }//GEN-LAST:event_jButton3ActionPerformed
 
