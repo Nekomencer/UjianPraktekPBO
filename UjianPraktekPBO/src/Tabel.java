@@ -2,7 +2,14 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-
+    import java.sql.DriverManager;
+    import java.sql.ResultSet;
+    import java.sql.PreparedStatement;
+    import java.sql.Connection;
+    import java.sql.SQLException;
+    import java.util.logging.Level;
+    import java.util.logging.Logger;
+    import javax.swing.table.DefaultTableModel;
 /**
  *
  * @author Administrator
@@ -15,7 +22,7 @@ public class Tabel extends javax.swing.JFrame {
     public Tabel() {
         initComponents();
     }
-
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
