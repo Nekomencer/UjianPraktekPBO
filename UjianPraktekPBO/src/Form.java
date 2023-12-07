@@ -20,7 +20,7 @@ public class Form extends javax.swing.JFrame {
      */
     public static Connection con() throws ClassNotFoundException, SQLException{
         Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
-        String mysqlUrl = "jdbc:sqlserver://localhost\\SQLEXPRESS:1433;databaseName=terserah_kamu;TrustServerCertificate=true;Encrypt=false;";
+        String mysqlUrl = "jdbc:sqlserver://localhost\\SQLEXPRESS:1433;databaseName=terserah_kamu;TrustServiceCertificate=true;Encrypt=false;";
         Connection con = DriverManager.getConnection(mysqlUrl, "son", "password");
         return con;
     }
@@ -378,7 +378,7 @@ public class Form extends javax.swing.JFrame {
         String alamat = Alamat.getText();
         try{
             con = con();
-            PreparedStatement pst = con.prepareStatement(String.format("INSERT INTO tbl_data (Nama, Jurusan, Email, Password, Jenis_Kelamin, Tanggal, Alamat) VALUES('%s', '%s', '%s', '%s', '%s', '%s')", nama, jurusan, email, password, jenis_kelamin, tanggal_lahir, alamat));
+            PreparedStatement pst = con.prepareStatement(String.format("INSERT INTO tbl_data (Nama, Jurusan, Email, Password, Jenis_Kelamin, Tanggal, Alamat) VALUES('%s', '%s', '%s', '%s', '%s', '%s', '%s')", nama, jurusan, email, password, jenis_kelamin, tanggal_lahir, alamat));
             ResultSet rst = pst.executeQuery();
         } catch (ClassNotFoundException ex) {
         } catch (SQLException ex) {
