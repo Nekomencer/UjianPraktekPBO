@@ -381,10 +381,10 @@ public class Form extends javax.swing.JFrame {
         String alamat = Alamat.getText();
         try {
             con = con();
-            PreparedStatement pst = con.prepareStatement(String.format("INSERT INTO tbl_data (Nama, Jurusan, Email, Password, Jenis_Kelamin, Tanggal_Lahir, Alamat) VALUES('%s', '%s', '%s', '%s', '%s', '%s', '%s')",  nama, jurusan, email, password, jenis_kelamin, tanggal_lahir, alamat));
-            ResultSet rst = pst.executeQuery();
-        } catch (ClassNotFoundException ex) {
-        } catch (SQLException ex) {
+            String str = String.format("INSERT INTO tbl_data (Nama, Jurusan, Email, Password, Jenis_Kelamin, Tanggal, Alamat) VALUES('%s', '%s', '%s', '%s', '%s', '%s', '%s')",  nama, jurusan, email, password, jenis_kelamin, tanggal_lahir, alamat);
+            PreparedStatement pst = con.prepareStatement(str);
+            pst.executeQuery();
+        } catch (SQLException | ClassNotFoundException ex) {
         }
     }//GEN-LAST:event_jButton3ActionPerformed
 
@@ -412,7 +412,7 @@ public class Form extends javax.swing.JFrame {
                 String emailDB = rst.getString("Email");
                 String passwordDB = rst.getString("Password");
                 String jenis_kelaminDB = rst.getString("Jenis_Kelamin");
-                String tanggal_lahirDB = rst.getString("Tanggal_Lahir");
+                String tanggal_lahirDB = rst.getString("Tanggal");
                 String alamatDB = rst.getString("Alamat");
 
                 if(namaDB.equals(tdb)){
@@ -438,7 +438,7 @@ public class Form extends javax.swing.JFrame {
         String tdb = DB.getText();
         try {
             con = con();
-            PreparedStatement pst = con.prepareStatement(String.format("UPDATE tbl_data SET  Jurusan = '%s', Email = '%s', Password = '%s', Jenis_Kelamin = '%s', Tanggal_Lahir = '%s', Alamat = '%s' WHERE Nama = '%s' ",  jurusan, email, password, jenis_kelamin, tanggal_lahir, alamat, tdb));
+            PreparedStatement pst = con.prepareStatement(String.format("UPDATE tbl_data SET  Jurusan = '%s', Email = '%s', Password = '%s', Jenis_Kelamin = '%s', Tanggal = '%s', Alamat = '%s' WHERE Nama = '%s' ",  jurusan, email, password, jenis_kelamin, tanggal_lahir, alamat, tdb));
             ResultSet rst = pst.executeQuery();
         } catch (ClassNotFoundException ex) {
         } catch (SQLException ex) {
