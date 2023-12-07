@@ -6,7 +6,7 @@
 
 /**
  *
- * @author PC
+ * @author Administrator
  */
 public class Utama extends javax.swing.JFrame {
 
@@ -134,7 +134,8 @@ public class Utama extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void abcActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_abcActionPerformed
-        // TODO add your handling code here:
+        Form A = new Form();
+        A.setVisible(true);
     }//GEN-LAST:event_abcActionPerformed
 
     /**

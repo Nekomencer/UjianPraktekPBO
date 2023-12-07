@@ -5,7 +5,7 @@
 
 /**
  *
- * @author YPAB-LAB-RPL
+ * @author Administrator
  */
 public class Tabel extends javax.swing.JFrame {
 
